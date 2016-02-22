@@ -1,3 +1,7 @@
+body, input {
+  font: menu;
+}
+
 .content {
   display: flex;
 }
