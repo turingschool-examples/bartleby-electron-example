@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+}
+
+.note-list {
+  width: 200px;
+}
+
+.note-list-item {
+  display: block;
+}
