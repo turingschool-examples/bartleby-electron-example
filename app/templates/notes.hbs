@@ -1,6 +1,19 @@
-{{#each model as |note|}}
-<div class="note-list-item">
-  <h3>{{note.id}}</h3>
-  <p>{{note.content}}</p>
+<div class="note-list">
+  <div class="new-note">
+    <form {{action 'createNote' on="submit"}}>
+      {{input type="text"
+      placeholder="New Note Title"
+      value=newNoteTitle
+      submit="createNote"}}
+    </form>
+    {{#if newNoteTitle}}<button {{action 'createNote'}}>Create</button>{{/if}}
+  </div>
+
+  {{#each model as |note|}}
+    {{#link-to 'notes.note' note class="note-list-item"}}
+      {{note.id}}
+    {{/link-to}}
+  {{/each}}
 </div>
-{{/each}}
+
+{{outlet}}
