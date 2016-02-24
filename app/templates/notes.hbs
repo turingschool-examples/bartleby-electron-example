@@ -1,6 +1,30 @@
-{{#each model as |note|}}
-<div class="note-list-item">
-  <h3>{{note.id}}</h3>
-  <p>{{note.content}}</p>
+<div class="row">
+
+  <div class="col s3">
+
+  </div>
+  <div class="sidebar">
+    <div class="collection">
+      <div class="note-list">
+        <div class="new-note">
+          <form {{action 'createNote' on="submit"}}>
+            {{input type="text"
+            placeholder="New Note Title"
+            value=newNoteTitle
+            submit="createNote"}}
+          </form>
+          {{#if newNoteTitle}}<a href="#!" class="collection-item red white-text" {{action 'createNote'}}>Create</a>{{/if}}
+        </div>
+
+        {{#each model as |note|}}
+        {{#link-to 'notes.note' note class="note-list-item"}}
+        <div class="">
+          <a href="#!" class="collection-item">{{note.id}}</a>
+        </div>
+        {{/link-to}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="col s9">{{outlet}}</div>
 </div>
-{{/each}}

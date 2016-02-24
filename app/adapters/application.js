@@ -8,6 +8,20 @@ export default DS.Adapter.extend({
 
   findAll() {
     return filesystem.all();
+  },
+
+  findRecord(store, type, id) {
+    return filesystem.find(id);
+  },
+
+  createRecord(store, type, snapshot) {
+    let data = this.serialize(snapshot, { includeId: true });
+    return filesystem.write(data.id, data.content);
+  },
+
+  updateRecord(store, type, snapshot) {
+    let data = this.serialize(snapshot, { includeId: true});
+    return filesystem.write(data.id, data.content);
   }
 
 });
