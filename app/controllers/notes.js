@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.controller.extend({
+export default Ember.Controller.extend({
 
   newNoteTitle: null,
 
@@ -15,9 +15,5 @@ export default Ember.controller.extend({
       });
     }
   }
-
-
-
-
 
 });
