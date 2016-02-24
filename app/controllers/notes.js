@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
       }).then(() => {
         this.set('newNoteTitle', null);
       });
-    }
+    },
   }
 
 });

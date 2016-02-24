@@ -15,13 +15,18 @@ export default DS.Adapter.extend({
   },
 
   createRecord(store, type, snapshot) {
-    let data = this.serialize(snapshot, { includeId: true });
+    let data = this.serialize(snapshot, { includeId: true } );
     return filesystem.write(data.id, data.content);
   },
 
   updateRecord(store, type, snapshot) {
-    let data = this.serialize(snapshot, { includeId: true});
+    let data = this.serialize(snapshot, { includeId: true} );
     return filesystem.write(data.id, data.content);
+  },
+
+  deleteRecord(store, type, snapshot) {
+    let data = this.serialize(snapshot, { includeId: true} );
+    return filesystem.destroy(data.id).then(() => { return { id: data.id } });
   }
 
 });
