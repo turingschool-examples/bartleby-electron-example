@@ -26,7 +26,7 @@ export default DS.Adapter.extend({
 
   deleteRecord(store, type, snapshot) {
     let data = this.serialize(snapshot, { includeId: true} );
-    return filesystem.destroy(data.id).then(() => { return { id: data.id } });
+    return filesystem.destroy(data.id).then(() => { return { id: data.id }; });
   }
 
 });
