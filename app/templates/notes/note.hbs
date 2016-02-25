@@ -6,6 +6,6 @@
   {{textarea value=model.content}}
 
   {{#if model.hasDirtyAttributes}}<button {{action 'saveNote' on='click'}}>Save Note</button>{{/if}}
-  {{#if model.hasDirtyAttributes}}<button {{action 'deleteNote' on='click'}}>Delete Note</button>{{/if}}
+  <button {{action 'deleteNote' on='click'}}>Delete Note</button>
 
 </div>

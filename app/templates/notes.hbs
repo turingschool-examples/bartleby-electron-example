@@ -6,7 +6,10 @@
   <div class="sidebar">
     <div class="collection">
       <div class="note-list">
+
+
         <div class="new-note">
+
           <form {{action 'createNote' on="submit"}}>
             {{input type="text"
             placeholder="New Note Title"
@@ -15,16 +18,12 @@
           </form>
           {{#if newNoteTitle}}<a href="#!" class="collection-item red white-text" {{action 'createNote'}}>Create</a>{{/if}}
         </div>
+        {{note-list notes = model}}
 
-        {{#each model as |note|}}
-        {{#link-to 'notes.note' note class="note-list-item"}}
-        <div class="">
-          <a href="#!" class="collection-item">{{note.id}}</a>
-        </div>
-        {{/link-to}}
-        {{/each}}
       </div>
     </div>
+
+
   </div>
   <div class="col s9">{{outlet}}</div>
 </div>
