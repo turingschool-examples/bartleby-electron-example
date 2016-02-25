@@ -1,0 +1,11 @@
+<div class="note-content">
+  <h3>{{model.id}}</h3>
+
+  <p>{{model.content}}</p>
+
+  {{textarea value=model.content}}
+
+  {{#if model.hasDirtyAttributes}}<button {{action 'saveNote' on='click'}}>Save Note</button>{{/if}}
+  <button {{action 'deleteNote' on='click'}}>Delete Note</button>
+
+</div>

@@ -1,0 +1,15 @@
+.sidebar {
+  width: 25%;
+  min-height: 100vh;
+  float: left;
+  background-color: ;
+  border-right: 1px solid #ccc;
+}
+
+#title {
+  font-family: "Arial", Helvetica, sans-serif;
+}
+
+.note-input {
+  width: auto;
+}
